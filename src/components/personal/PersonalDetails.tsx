@@ -151,6 +151,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("birthday", value)}
           required
         />
+        
       </div>
     </SectionCard>
   );

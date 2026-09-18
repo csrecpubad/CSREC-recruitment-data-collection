@@ -25,3 +25,14 @@ export interface PersonalDetails {
 
   age: string;
 }
+
+export interface ContactDetails {
+  mobile: string;
+  whatsapp: string;
+  email: string;
+}
+
+export interface AddressDetails {
+  permanentAddress: string;
+  district: string;
+}

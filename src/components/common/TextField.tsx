@@ -12,6 +12,7 @@ interface TextFieldProps {
   type?: "text" | "email" | "tel" | "number";
 
   error?: string;
+  fullWidth?: boolean;
 }
 
 export default function TextField({
@@ -26,15 +27,13 @@ export default function TextField({
   maxLength,
   type = "text",
   error,
+  fullWidth = false,
 }: TextFieldProps) {
   return (
-    <div className="form-group">
+    <div className={`form-group ${fullWidth ? "full-width" : ""}`}>
       <label htmlFor={name}>
         {label}
-
-        {required && (
-          <span className="required-mark"> *</span>
-        )}
+        {required && <span className="required-mark"> *</span>}
       </label>
 
       <input
@@ -50,15 +49,11 @@ export default function TextField({
       />
 
       {example && (
-        <small className="field-example">
-          {example}
-        </small>
+        <small className="field-example">{example}</small>
       )}
 
       {error && (
-        <small className="field-error">
-          {error}
-        </small>
+        <small className="field-error">{error}</small>
       )}
     </div>
   );
