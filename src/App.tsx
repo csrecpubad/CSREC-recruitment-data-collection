@@ -1,61 +1,106 @@
 import { useState } from "react";
 
 import PersonalDetails from "./components/personal/PersonalDetails";
-import ContactDetails from "./components/contact/ContactDetails";
-import AddressDetails from "./components/address/AddressDetails";
-import GovernmentLogo from "./images/header.png";
+import MSOExamDetails from "./components/mso/MSOExamDetails";
+import EducationQualifications from "./components/education/EducationQualifications";
+import Declaration from "./components/declaration/Declaration";
 
 import type {
   PersonalDetails as PersonalDetailsType,
-  ContactDetails as ContactDetailsType,
-  AddressDetails as AddressDetailsType,
+  MSOExamDetails as MSOExamDetailsType,
+  OLevelDetails as OLevelDetails,
+  ALevelDetails as ALevelDetails,
 } from "./types/recruitment";
+import Footer from "./components/fotter/Fotter";
+import Header from "./components/header/Header";
 
 function App() {
-  const [personalDetails, setPersonalDetails] =
-    useState<PersonalDetailsType>({
-      nameSinhala: "",
-      nameTamil: "",
-      nameEnglish: "",
+  const [declarationAccepted, setDeclarationAccepted] = useState(false);
+  const [personalDetails, setPersonalDetails] = useState<PersonalDetailsType>({
+    nameSinhala: "",
+    nameEnglish: "",
 
-      prefix: "",
+    prefix: "",
 
-      fullNameSinhala: "",
-      fullNameTamil: "",
-      fullNameEnglish: "",
+    fullNameSinhala: "",
+    fullNameEnglish: "",
 
-      nic: "",
+    nic: "",
 
-      gender: "",
-      civilStatus: "",
+    gender: "",
+    civilStatus: "",
 
-      permanentAddress: "",
-      district: "",
+    permanentAddress: "",
+    appointmentAddress: "",
 
-      mobile: "",
-      whatsapp: "",
+    residentialDistrict: "",
 
-      birthday: "",
+    mobile: "",
+    whatsapp: "",
 
-      age: "",
-    });
+    birthday: "",
+    age: "",
 
-  const [contactDetails, setContactDetails] =
-    useState<ContactDetailsType>({
-      mobile: "",
-      whatsapp: "",
-      email: "",
-    });
+    currentPosition: "",
+    workPlace: "",
+  });
 
-  const [addressDetails, setAddressDetails] =
-    useState<AddressDetailsType>({
-      permanentAddress: "",
-      district: "",
-    });
+  const [msoExamDetails, setMsoExamDetails] = useState<MSOExamDetailsType>({
+    msoExamNumber: "",
+    msoMarks: "",
+    msoRank: "",
+    msoMedium: "",
+    examDistrict: "",
+    selectedDistrictQualification: "",
+  });
+
+  const [olData, setOlData] = useState<OLevelDetails>({
+    olYear: "",
+    olIndex: "",
+    maths: "",
+    language: "",
+    sub3: "",
+    sub4: "",
+    sub5: "",
+    sub6: "",
+    sub7: "",
+    sub8: "",
+    sub9: "",
+  });
+
+  const [alData, setAlData] = useState<ALevelDetails>({
+    alYear: "",
+    alIndex: "",
+    stream: "",
+    alSub1: "",
+    alSub2: "",
+    alSub3: "",
+    generalEnglish: "",
+    geGrade: "" as ALevelDetails["geGrade"],
+    degreeQualification: "",
+    degree: "",
+    university: "",
+    degreeDate: "",
+    otherQualification: "",
+  });
+
+  const handleOLChange = (field: keyof OLevelDetails, value: string) => {
+    setOlData((previous) => ({
+      ...previous,
+      [field]: value,
+    }));
+  };
+
+  const handleALChange = (field: keyof ALevelDetails, value: string) => {
+    setAlData((previous) => ({
+      ...previous,
+      [field]: value,
+    }));
+  };
 
   const handlePersonalChange = (
     field: keyof PersonalDetailsType,
-    value: string
+    value: string,
   ) => {
     setPersonalDetails((previous) => ({
       ...previous,
@@ -63,21 +108,11 @@ function App() {
     }));
   };
 
-  const handleContactChange = (
-    field: keyof ContactDetailsType,
-    value: string
+  const handleMSOExamChange = (
+    field: keyof MSOExamDetailsType,
+    value: string,
   ) => {
-    setContactDetails((previous) => ({
-      ...previous,
-      [field]: value,
-    }));
-  };
-
-  const handleAddressChange = (
-    field: keyof AddressDetailsType,
-    value: string
-  ) => {
-    setAddressDetails((previous) => ({
+    setMsoExamDetails((previous) => ({
       ...previous,
       [field]: value,
     }));
@@ -85,37 +120,36 @@ function App() {
 
   return (
     <div>
-      <header className="app-header">
-        <div className="app-header-inner text-center">
-          <div className="logo">
-          <img src={GovernmentLogo} alt="Government Logo" />
-          </div>
-          <h3>
-            Ministry of Public Administration, Provincial Councils and Local
-            Government
-          </h3>
-          <h1>Recruitment Data Collection System</h1>
-          {/* <p>
-            Online Recruitment Data Collection Portal
-          </p> */}
-        </div>
-      </header>
-
       <main>
+        
+        <Header/>
+
         <PersonalDetails
           data={personalDetails}
           onChange={handlePersonalChange}
         />
+        <MSOExamDetails data={msoExamDetails} onChange={handleMSOExamChange} />
 
-        <ContactDetails
-          data={contactDetails}
-          onChange={handleContactChange}
+        <EducationQualifications
+          olData={olData}
+          alData={alData}
+          onOLChange={handleOLChange}
+          onALChange={handleALChange}
         />
 
-        <AddressDetails
-          data={addressDetails}
-          onChange={handleAddressChange}
+        <Declaration
+          accepted={declarationAccepted}
+          onChange={setDeclarationAccepted}
         />
+
+        <div className="submit-area">
+          <button type="submit" className="btn" disabled={!declarationAccepted}>
+            Submit Application
+          </button>
+        </div>
+
+        {/* Footer */}
+        <Footer />
       </main>
     </div>
   );
