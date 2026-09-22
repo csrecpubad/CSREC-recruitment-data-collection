@@ -1,3 +1,7 @@
+export interface GeneralDetails {
+  callingNumber: string;
+  email: string;
+}
 export interface PersonalDetails {
   nameSinhala: string;
   nameEnglish: string;
@@ -67,7 +71,7 @@ export interface ALevelDetails {
   alSub3: string;
 
   generalEnglish: "Yes" | "No" | "";
-  geGrade: "A" | "B" | "C" | "S" | "F";
+  geGrade: "A" | "B" | "C" | "S" | "F" |"";
 
   degreeQualification: "Yes" | "No" | "";
   degree: string;

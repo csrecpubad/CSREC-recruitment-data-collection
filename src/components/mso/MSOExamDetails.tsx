@@ -14,6 +14,8 @@ interface MSOExamDetailsProps {
     field: keyof MSOExamDetailsType,
     value: string
   ) => void;
+
+  errors?: Record<string, string>;
 }
 
 const mediumOptions = [
@@ -80,10 +82,11 @@ const districtQualificationOptions = [
 export default function MSOExamDetails({
   data,
   onChange,
+  errors = {},
 }: MSOExamDetailsProps) {
   return (
     <SectionCard
-      number="02"
+      number="03"
       title="Management Service Officers' Service Examination Details / කළමනාකරණ සේවා නිලධාරී සේවයේ III ශ්‍රේණියට බඳවා ගැනීමේ විවෘත තරග විභාගය සම්බන්ධ තොරතුරු"
       description="முகாமைத்துவ சேவை உத்தியோகத்தர் சேவையின் தரம் III இற்கு ஆட்சேர்ப்பதற்கான போட்டிப் பரீட்சை தொடர்பான தகவல்கள்"
     >
@@ -98,6 +101,7 @@ export default function MSOExamDetails({
           }
           placeholder="Enter examination number"
           required
+          error={errors.msoExamNumber}
         />
 
         <TextField
@@ -110,6 +114,7 @@ export default function MSOExamDetails({
           }
           placeholder="Enter marks"
           required
+          error={errors.msoMarks}
         />
 
         <TextField
@@ -122,6 +127,7 @@ export default function MSOExamDetails({
           }
           placeholder="Enter merit/rank"
           required
+          error={errors.msoRank}  
         />
 
         <SelectField
@@ -134,6 +140,7 @@ export default function MSOExamDetails({
           }
           placeholder="Select Medium"
           required
+          error={errors.msoMedium}
         />
 
         <SelectField
@@ -146,6 +153,7 @@ export default function MSOExamDetails({
           }
           placeholder="Select District"
           required
+          error={errors.examDistrict}
         />
 
         <RadioGroup
@@ -160,6 +168,7 @@ export default function MSOExamDetails({
             )
           }
           required
+          error={errors.selectedDistrictQualification}
         />
 
       </div>

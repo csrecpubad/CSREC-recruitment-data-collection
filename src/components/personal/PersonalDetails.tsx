@@ -10,6 +10,7 @@ interface PersonalDetailsProps {
   data: PersonalDetailsType;
 
   onChange: (field: keyof PersonalDetailsType, value: string) => void;
+  errors?: Record<string, string>;
 }
 
 const prefixOptions = [
@@ -155,10 +156,11 @@ const districtOptions = [
 export default function PersonalDetails({
   data,
   onChange,
+  errors = {},
 }: PersonalDetailsProps) {
   return (
     <SectionCard
-      number="01"
+      number="02"
       title="Personal Details / පෞද්ගලික තොරතුරු / தனிப்பட்ட தகவல்"
       description="Please enter your personal and contact information"
     >
@@ -172,6 +174,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("prefix", value)}
           placeholder="Select"
           required
+          error={errors.prefix}
         />
 
         {/* Name with initials - English */}
@@ -183,6 +186,7 @@ export default function PersonalDetails({
           placeholder="Enter name with initials"
           example="Example: A.B.C.D. Perera"
           required
+          error={errors.nameEnglish}
         />
 
         {/* Name with initials - Sinhala/Tamil */}
@@ -194,6 +198,7 @@ export default function PersonalDetails({
           placeholder="Enter name with initials"
           example="Example: ඒ.බී.සී.ඩී. පෙරේරා / ஏ.பி.சி.டி. பேரேரா"
           required
+          error={errors.nameSinhala}
         />
 
         {/* Full name - English */}
@@ -205,6 +210,7 @@ export default function PersonalDetails({
           placeholder="Enter full name"
           example="Example: Anole Berd Chirsh Perera"
           required
+          error={errors.fullNameEnglish}
         />
 
         {/* Full name - Sinhala/Tamil */}
@@ -216,12 +222,14 @@ export default function PersonalDetails({
           placeholder="Enter full name"
           example="Example: අනෝල් බර්ඩ් චර්ෂ් පෙරේරා / அனோல் பெர்ட் சிர்ஷ் பேரேரா"
           required
+          error={errors.fullNameSinhala}
         />
 
         {/* NIC */}
         <NICField
           value={data.nic}
           onChange={(value) => onChange("nic", value)}
+          error={errors.nic}
         />
 
         {/* Gender */}
@@ -233,6 +241,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("gender", value)}
           placeholder="Select"
           required
+          error={errors.gender}
         />
 
         {/* Civil Status */}
@@ -244,6 +253,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("civilStatus", value)}
           placeholder="Select"
           required
+          error={errors.civilStatus}
         />
 
         {/* Permanent Address */}
@@ -254,6 +264,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("permanentAddress", value)}
           placeholder="Enter permanent address"
           required
+          error={errors.permanentAddress}
         />
 
         {/* Appointment Address */}
@@ -264,6 +275,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("appointmentAddress", value)}
           placeholder="Enter appointment letter address"
           required
+          error={errors.appointmentAddress}
         />
 
         {/* Residential District */}
@@ -275,6 +287,7 @@ export default function PersonalDetails({
           onChange={(value) => onChange("residentialDistrict", value)}
           placeholder="Select District"
           required
+          error={errors.residentialDistrict}
         />
 
         {/* Mobile */}
@@ -287,6 +300,7 @@ export default function PersonalDetails({
           placeholder="07XXXXXXXX"
           maxLength={10}
           required
+          error={errors.mobile}
         />
 
         {/* WhatsApp */}
@@ -302,21 +316,19 @@ export default function PersonalDetails({
 
         {/* Birthday */}
         <DateField
-  label="Date of Birth / උපන් දිනය / பிறந்த திகதி"
-  name="birthday"
-  value={data.birthday}
-  onChange={(value) => {
-    onChange("birthday", value);
+          label="Date of Birth / උපන් දිනය / பிறந்த திகதி"
+          name="birthday"
+          value={data.birthday}
+          onChange={(value) => {
+            onChange("birthday", value);
 
-    const calculatedAge = calculateAge(
-      value,
-      "2025-06-30"
-    );
+            const calculatedAge = calculateAge(value, "2025-06-30");
 
-    onChange("age", calculatedAge);
-  }}
-  required
-/>
+            onChange("age", calculatedAge);
+          }}
+          required
+          error={errors.birthday}
+        />
 
         {/* Age */}
         <TextField
@@ -336,6 +348,7 @@ export default function PersonalDetails({
           value={data.currentPosition}
           onChange={(value) => onChange("currentPosition", value)}
           placeholder="Current Position"
+          error={errors.currentPosition}
         />
 
         {/* Workplace */}
@@ -345,6 +358,7 @@ export default function PersonalDetails({
           value={data.workPlace}
           onChange={(value) => onChange("workPlace", value)}
           placeholder="Enter current workplace"
+          error={errors.workPlace}
         />
       </div>
     </SectionCard>

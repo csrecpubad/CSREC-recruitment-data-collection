@@ -21,6 +21,9 @@ interface EducationQualificationsProps {
     field: keyof ALevelDetails,
     value: string
   ) => void;
+
+  olErrors?: Record<string, string>;
+  alErrors?: Record<string, string>;
 }
 
 const yesNoOptions = [
@@ -58,10 +61,12 @@ export default function EducationQualifications({
   alData,
   onOLChange,
   onALChange,
+  olErrors = {},
+  alErrors = {},
 }: EducationQualificationsProps) {
   return (
     <SectionCard
-      number="03"
+      number="04"
       title="Education Qualifications / අධ්‍යාපන සුදුසුකම් / கல்வித் தகைமைகள்"
       description="Please provide your educational qualifications."
     >
@@ -116,6 +121,7 @@ export default function EducationQualifications({
             placeholder="Enter examination year"
             maxLength={4}
             required
+            error={olErrors.olYear}
           />
 
           <TextField
@@ -127,6 +133,7 @@ export default function EducationQualifications({
             }
             placeholder="Enter examination index"
             required
+            error={olErrors.olIndex}
           />
 
           <TextField
@@ -138,6 +145,7 @@ export default function EducationQualifications({
             }
             placeholder="Example: Mathematics-A"
             required
+            error={olErrors.maths}
           />
 
           <TextField
@@ -149,6 +157,7 @@ export default function EducationQualifications({
             }
             placeholder="Example: Sinhala-A"
             required
+            error={olErrors.language}
           />
 
           <TextField
@@ -159,6 +168,7 @@ export default function EducationQualifications({
               onOLChange("sub3", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub3}
           />
 
           <TextField
@@ -169,6 +179,7 @@ export default function EducationQualifications({
               onOLChange("sub4", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub4}
           />
 
           <TextField
@@ -179,6 +190,7 @@ export default function EducationQualifications({
               onOLChange("sub5", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub5}
           />
 
           <TextField
@@ -189,6 +201,7 @@ export default function EducationQualifications({
               onOLChange("sub6", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub6}
           />
 
           <TextField
@@ -199,6 +212,7 @@ export default function EducationQualifications({
               onOLChange("sub7", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub7}
           />
 
           <TextField
@@ -209,6 +223,7 @@ export default function EducationQualifications({
               onOLChange("sub8", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub8}
           />
 
           <TextField
@@ -219,6 +234,7 @@ export default function EducationQualifications({
               onOLChange("sub9", value)
             }
             placeholder="Subject Name - Result"
+            error={olErrors.sub9}
           />
 
         </div>
@@ -277,6 +293,7 @@ export default function EducationQualifications({
             placeholder="Enter examination year"
             maxLength={4}
             required
+            error={alErrors.alYear}
           />
 
           <TextField
@@ -288,6 +305,7 @@ export default function EducationQualifications({
             }
             placeholder="Enter examination index"
             required
+            error={alErrors.alIndex}
           />
 
           <TextField
@@ -299,6 +317,7 @@ export default function EducationQualifications({
             }
             placeholder="Example: Commerce"
             required
+            error={alErrors.stream}
           />
 
           <TextField
@@ -310,6 +329,7 @@ export default function EducationQualifications({
             }
             placeholder="Subject Name - Result"
             required
+            error={alErrors.alSub1}
           />
 
           <TextField
@@ -321,6 +341,7 @@ export default function EducationQualifications({
             }
             placeholder="Subject Name - Result"
             required
+            error={alErrors.alSub2}
           />
 
           <TextField
@@ -332,6 +353,7 @@ export default function EducationQualifications({
             }
             placeholder="Subject Name - Result"
             required
+            error={alErrors.alSub3}
           />
 
           <SelectField
@@ -344,6 +366,7 @@ export default function EducationQualifications({
             }
             placeholder="Select"
             required
+            error={alErrors.generalEnglish}
           />
 
           <SelectField
@@ -355,6 +378,7 @@ export default function EducationQualifications({
               onALChange("geGrade", value)
             }
             placeholder="Select Grade"
+            error={alErrors.geGrade}
           />
 
           <SelectField
@@ -370,6 +394,7 @@ export default function EducationQualifications({
             }
             placeholder="Select"
             required
+            error={alErrors.degreeQualification}
           />
 
           <TextField
@@ -380,6 +405,7 @@ export default function EducationQualifications({
               onALChange("degree", value)
             }
             placeholder="Enter degree"
+            error={alErrors.degree}
           />
 
           <TextField
@@ -390,6 +416,7 @@ export default function EducationQualifications({
               onALChange("university", value)
             }
             placeholder="Enter university / institute"
+            error={alErrors.university}
           />
 
           <DateField
@@ -399,6 +426,7 @@ export default function EducationQualifications({
             onChange={(value) =>
               onALChange("degreeDate", value)
             }
+            error={alErrors.degreeDate}
           />
 
           <TextField
@@ -412,6 +440,7 @@ export default function EducationQualifications({
               )
             }
             placeholder="Enter other qualification"
+            error={alErrors.otherQualification}
           />
 
         </div>

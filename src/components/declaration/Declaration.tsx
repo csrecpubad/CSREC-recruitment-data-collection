@@ -3,15 +3,17 @@ import SectionCard from "../common/SectionCard";
 interface DeclarationProps {
   accepted: boolean;
   onChange: (value: boolean) => void;
+  error?: string;
 }
 
 export default function Declaration({
   accepted,
   onChange,
+  error,
 }: DeclarationProps) {
   return (
     <SectionCard
-      number="04"
+      number="05"
       title="Declaration / ප්‍රකාශය / உறுதிமொழி"
       description="Please read the declaration carefully and confirm it."
     >
@@ -73,6 +75,11 @@ export default function Declaration({
           </span>
 
         </label>
+        {error && (
+  <small className="field-error">
+    {error}
+  </small>
+)}
 
       </div>
     </SectionCard>
