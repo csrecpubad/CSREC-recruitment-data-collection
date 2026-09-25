@@ -11,7 +11,7 @@ export default function Header() {
                 Ministry of Public Administration, Provincial Councils and Local
                 Government
               </h3>
-              <h1>Recruitment Data Collection System</h1>
+              <h1>Candidate Evaluation Management System<br>CEMS</br></h1>
               <h3>
                 කළමනාකරණ සේවා නිලධාරි සේවයේ III ශ්‍රේණියට බඳවා ගැනීමේ විවෘත තරග
                 විභාගය -2024(2025) : දෙවන වටය
