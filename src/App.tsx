@@ -395,6 +395,14 @@ const result =
   toast.success(
     "Application submitted successfully!"
   );
+
+   resetForm();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
 } else {
   toast.error(
     result.message ||
@@ -474,6 +482,76 @@ const generalErrors = Object.fromEntries(
         message,
       ])
   );
+
+  const resetForm = () => {
+  setGeneralDetails({
+    callingNumber: "",
+    email: "",
+  });
+
+  setPersonalDetails({
+    nameSinhala: "",
+    nameEnglish: "",
+    prefix: "",
+    fullNameSinhala: "",
+    fullNameEnglish: "",
+    nic: "",
+    gender: "",
+    civilStatus: "",
+    permanentAddress: "",
+    appointmentAddress: "",
+    residentialDistrict: "",
+    mobile: "",
+    whatsapp: "",
+    birthday: "",
+    age: "",
+    currentPosition: "",
+    workPlace: "",
+  });
+
+  setMsoExamDetails({
+    msoExamNumber: "",
+    msoMarks: "",
+    msoRank: "",
+    msoMedium: "",
+    examDistrict: "",
+    selectedDistrictQualification: "",
+  });
+
+  setOlData({
+    olYear: "",
+    olIndex: "",
+    maths: "",
+    language: "",
+    sub3: "",
+    sub4: "",
+    sub5: "",
+    sub6: "",
+    sub7: "",
+    sub8: "",
+    sub9: "",
+  });
+
+  setAlData({
+    alYear: "",
+    alIndex: "",
+    stream: "",
+    alSub1: "",
+    alSub2: "",
+    alSub3: "",
+    generalEnglish: "",
+    geGrade: "",
+    degreeQualification: "",
+    degree: "",
+    university: "",
+    degreeDate: "",
+    otherQualification: "",
+  });
+
+  setDeclarationAccepted(false);
+
+  setErrors({});
+};
   /* =====================================================
      UI
   ===================================================== */
