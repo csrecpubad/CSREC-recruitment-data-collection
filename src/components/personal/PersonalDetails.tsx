@@ -258,7 +258,7 @@ export default function PersonalDetails({
 
         {/* Permanent Address */}
         <TextField
-          label="Permanent Address / ස්ථීර ලිපිනය / நிரந்தர முகவரி"
+          label="Permanent Address / ස්ථීර ලිපිනය / நிரந்தர முகவரி ( Sinhala / Tamil )"
           name="permanentAddress"
           value={data.permanentAddress}
           onChange={(value) => onChange("permanentAddress", value)}
@@ -269,7 +269,7 @@ export default function PersonalDetails({
 
         {/* Appointment Address */}
         <TextField
-          label="Address to which Appointment Letter should be sent / පත්වීම් ලිපිය යොමු කළ යුතු ලිපිනය / நியமனக் கடிதம் அனுப்ப வேண்டிய முகவரி"
+          label="Address to which Appointment Letter should be sent / පත්වීම් ලිපිය යොමු කළ යුතු ලිපිනය / நியமனக் கடிதம் அனுப்ப வேண்டிய முகவரி ( Sinhala / Tamil )"
           name="appointmentAddress"
           value={data.appointmentAddress}
           onChange={(value) => onChange("appointmentAddress", value)}
