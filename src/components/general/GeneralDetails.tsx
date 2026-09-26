@@ -22,26 +22,26 @@ export default function GeneralDetails({
   return (
     <SectionCard
       number="01"
-      title="General Details"
+      title="General Details / සාමාන්‍ය විස්තර / பொது விவரங்கள்"
       description="Please provide the interview calling number and email address."
     >
       <div className="form-grid">
 
         <TextField
-          label="Interview Calling Number"
+          label="Interview Calling Number / සම්මුඛ පරීක්ෂණ කැදවීම් ලිපි අංකය / நேர்காணல் அழைப்பு கடித எண்"
           name="callingNumber"
           value={data.callingNumber}
           onChange={(value) =>
             onChange("callingNumber", value)
           }
           placeholder="Enter interview calling number"
-          example="Example: MSO/001"
+          example="Example: MSO/O/2025/II/S/1B/0001"
           required
           error={errors.callingNumber}
         />
 
         <TextField
-          label="Email Address"
+          label="Email Address / විද්‍යුත් තැපැල් ලිපිනය / மின்னஞ்சல் முகவரி"
           name="email"
           type="email"
           value={data.email}

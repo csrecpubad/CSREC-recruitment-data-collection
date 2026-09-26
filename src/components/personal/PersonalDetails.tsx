@@ -332,7 +332,7 @@ export default function PersonalDetails({
 
         {/* Age */}
         <TextField
-          label="Age as at 30.06.2025 / 2025.06.30 දිනට වයස"
+          label="Age as at 30.06.2025 / 2025.06.30 දිනට වයස / 2025.06.30 அன்று வயது"
           name="age"
           value={data.age}
           onChange={() => {}}
@@ -343,7 +343,7 @@ export default function PersonalDetails({
 
         {/* Current Position */}
         <TextField
-          label="If currently employed in public service, Current Position / දැනට ඔබ දරන තනතුර"
+          label="If currently employed in public service, Current Position / දැනට ඔබ දරන තනතුර / தற்போதைய பதவி"
           name="currentPosition"
           value={data.currentPosition}
           onChange={(value) => onChange("currentPosition", value)}
@@ -353,7 +353,7 @@ export default function PersonalDetails({
 
         {/* Workplace */}
         <TextField
-          label="Current Workplace / වර්තමාන සේවා ස්ථානය"
+          label="Current Workplace / වර්තමාන සේවා ස්ථානය / தற்போதைய பணியிடம்"
           name="workPlace"
           value={data.workPlace}
           onChange={(value) => onChange("workPlace", value)}

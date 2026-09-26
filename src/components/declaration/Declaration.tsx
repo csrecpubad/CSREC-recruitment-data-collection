@@ -22,6 +22,18 @@ export default function Declaration({
         <div className="declaration-text">
 
           <p>
+            I certify that the above-mentioned information is true and correct.
+          </p>
+
+          <p>
+            I certify that I possess the required qualifications for appointment to Grade III of the Management Services 
+            Officers' Service; furthermore, I pledge that, should I be selected for the appointment, I will 
+            serve at the assigned duty station and will not request a change of the assigned duty station for any reason.
+          </p>
+
+          <div className="declaration-divider" />
+          
+          <p>
             ඉහත සඳහන් තොරතුරු සත්‍ය සහ නිවැරදි බව මම
             සහතික කරමි.
           </p>
@@ -66,6 +78,9 @@ export default function Declaration({
           />
 
           <span>
+            I have read and understood the above statement,
+and I agree with the matters stated therein.
+<br/>
             ඉහත ප්‍රකාශය කියවා අවබෝධ කරගත් අතර,
             එහි සඳහන් කරුණු වලට එකඟ වෙමි.
             <br />

@@ -77,14 +77,21 @@ export default function EducationQualifications({
       <div className="education-subsection">
 
         <h3>
-          අධ්‍යයන පොදු සහතික පත්‍ර (සාමාන්‍ය පෙළ)
+          General Certificate of Education (Ordinary Level) / අධ්‍යයන පොදු සහතික පත්‍ර (සාමාන්‍ය පෙළ) / கல்விப் பொதுத் தராதர (சாதாரண தரம்)
         </h3>
 
-        <p className="education-subtitle">
+        {/* <p className="education-subtitle">
           கல்விப் பொதுத் தராதர (சாதாரண தரம்)
-        </p>
+        </p> */}
 
         <div className="education-description">
+                    These educational qualifications must be completed by 30.06.2025.
+          <br/>
+          List the subjects and the grades obtained in English medium, following the format of the example below.
+          <br />
+          Ex:- Mathematics - A
+          <br/>
+          <br/>
           මෙම අධ්‍යාපන සුදුසුකම් 2025.06.30 දිනට පෙර
           සම්පූර්ණ කර තිබිය යුතු වේ.
           <br />
@@ -112,7 +119,7 @@ export default function EducationQualifications({
         <div className="form-grid">
 
           <TextField
-            label="විභාග වර්ෂය / பரீட்சை ஆண்டு"
+            label="Exam Year / විභාග වර්ෂය / பரீட்சை ஆண்டு"
             name="olYear"
             value={olData.olYear}
             onChange={(value) =>
@@ -125,7 +132,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විභාග අංකය / பரீட்சை சுட்டெண்"
+            label="Exam Index / විභාග අංකය / பரீட்சை சுட்டெண்"
             name="olIndex"
             value={olData.olIndex}
             onChange={(value) =>
@@ -137,7 +144,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 01 / பாடம் 01 (Mathematics)"
+            label="Subject 01 / විෂයය 01 / பாடம் 01 (Mathematics)"
             name="maths"
             value={olData.maths}
             onChange={(value) =>
@@ -149,7 +156,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 02 / பாடம் 02 (Language)"
+            label="Subject 02 / විෂයය 02 / பாடம் 02 (Language)"
             name="language"
             value={olData.language}
             onChange={(value) =>
@@ -161,7 +168,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 03 / பாடம் 03"
+            label="Subject 03 / විෂයය 03 / பாடம் 03"
             name="sub3"
             value={olData.sub3}
             onChange={(value) =>
@@ -172,7 +179,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 04 / பாடம் 04"
+            label="Subject 04 / විෂයය 04 / பாடம் 04"
             name="sub4"
             value={olData.sub4}
             onChange={(value) =>
@@ -183,7 +190,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 05 / பாடம் 05"
+            label="Subject 05 / විෂයය 05 / பாடம் 05"
             name="sub5"
             value={olData.sub5}
             onChange={(value) =>
@@ -194,7 +201,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 06 / பாடம் 06"
+            label="Subject 06 / විෂයය 06 / பாடம் 06"
             name="sub6"
             value={olData.sub6}
             onChange={(value) =>
@@ -205,7 +212,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 07 / பாடம் 07"
+            label="Subject 07 / විෂයය 07 / பாடம் 07"
             name="sub7"
             value={olData.sub7}
             onChange={(value) =>
@@ -216,7 +223,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 08 / பாடம் 08"
+            label="Subject 08 / විෂයය 08 / பாடம் 08"
             name="sub8"
             value={olData.sub8}
             onChange={(value) =>
@@ -227,7 +234,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 09 / பாடம் 09"
+            label="Subject 09 / විෂයය 09 / பாடம் 09"
             name="sub9"
             value={olData.sub9}
             onChange={(value) =>
@@ -247,14 +254,24 @@ export default function EducationQualifications({
       <div className="education-subsection">
 
         <h3>
-          අධ්‍යයන පොදු සහතික පත්‍ර (උසස් පෙළ)
+          General Certificate of Education (Advanced Level) / අධ්‍යයන පොදු සහතික පත්‍ර (උසස් පෙළ) / கல்விப் பொதுத் தராதர (உயர் தரம்)
         </h3>
 
-        <p className="education-subtitle">
+        {/* <p className="education-subtitle">
           கல்விப் பொதுத் தராதர (உயர் தரம்)
-        </p>
+        </p> */}
 
         <div className="education-description">
+          These educational qualifications must be completed by 30.06.2025.
+          <br/>
+
+          List the subjects passed (excluding General English) and the grades obtained in the G.C.E. (Advanced Level) examination in English medium, following the format of the example below.
+          <br />
+
+          Ex:- Economics-A
+
+          <br/>
+          <br/>
           මෙම අධ්‍යාපන සුදුසුකම් 2025.06.30 දිනට පෙර
           සම්පූර්ණ කර තිබිය යුතු වේ.
           <br />
@@ -279,12 +296,13 @@ export default function EducationQualifications({
           <br />
 
           உதா:- Economics-A
+
         </div>
 
         <div className="form-grid">
 
           <TextField
-            label="විභාග වර්ෂය / பரீட்சை ஆண்டு"
+            label="Exam Year / විභාග වර්ෂය / பரீட்சை ஆண்டு"
             name="alYear"
             value={alData.alYear}
             onChange={(value) =>
@@ -297,7 +315,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විභාග අංකය / பரீட்சை சுட்டெண்"
+            label="Exam Index / විභාග අංකය / பரீட்சை சுட்டெண்"
             name="alIndex"
             value={alData.alIndex}
             onChange={(value) =>
@@ -309,7 +327,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="උසස් පෙළ විභාගයට පෙනී සිටි විෂයය ධාරාව / உயர்நிலைப் பரீட்சைக்கு தோற்றும் பாடத் துறை"
+            label="Advanced Level Subject Stream / උසස් පෙළ විභාගයට පෙනී සිටි විෂයය ධාරාව / உயர்நிலைப் பரீட்சைக்கு தோற்றும் பாடத் துறை"
             name="stream"
             value={alData.stream}
             onChange={(value) =>
@@ -321,7 +339,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 01 / பாடம் 01"
+            label="Subject 01 / විෂයය 01 / பாடம் 01"
             name="alSub1"
             value={alData.alSub1}
             onChange={(value) =>
@@ -333,7 +351,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 02 / பாடம் 02"
+            label="Subject 02 / විෂයය 02 / பாடம் 02"
             name="alSub2"
             value={alData.alSub2}
             onChange={(value) =>
@@ -345,7 +363,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="විෂයය 03 / பாடம் 03"
+            label="Subject 03 / විෂයය 03 / பாடம் 03"
             name="alSub3"
             value={alData.alSub3}
             onChange={(value) =>
@@ -357,7 +375,7 @@ export default function EducationQualifications({
           />
 
           <SelectField
-            label="ඔබ සාමාන්‍ය ඉංග්‍රීසි විෂයය සමත් ද? / நீங்கள் பொது ஆங்கிலப் பாடத்தில் தேர்ச்சி பெற்றீர்களா?"
+            label="Did you pass the General English subject? / ඔබ සාමාන්‍ය ඉංග්‍රීසි විෂයය සමත් ද? / நீங்கள் பொது ஆங்கிலப் பாடத்தில் தேர்ச்சி பெற்றீர்களா?"
             name="generalEnglish"
             value={alData.generalEnglish}
             options={yesNoOptions}
@@ -370,7 +388,7 @@ export default function EducationQualifications({
           />
 
           <SelectField
-            label="සාමාන්‍ය ඉංග්‍රීසි විෂයය සමත් නම් ලබා ඇති සාමාර්ථය / அவ்வாறு தேர்ச்சி பெற்றிருப்பின் தேர்ச்சியின் தரம்"
+            label="General English Grade / සාමාන්‍ය ඉංග්‍රීසි විෂයය සමත් නම් ලබා ඇති සාමාර්ථය / அவ்வாறு தேர்ச்சி பெற்றிருப்பின் தேர்ச்சியின் தரம்"
             name="geGrade"
             value={alData.geGrade}
             options={gradeOptions}
@@ -382,7 +400,7 @@ export default function EducationQualifications({
           />
 
           <SelectField
-            label="ඔබ විසින් උපාධි සුදුසුකමක් සම්පූර්ණ කර ඇත් ද? / நீங்கள் பட்டதாரி தகுதியை முழுமையாக நிறைவு செய்துள்ளீர்களா?"
+            label="Did you complete a degree qualification? / ඔබ විසින් උපාධි සුදුසුකමක් සම්පූර්ණ කර ඇත් ද? / நீங்கள் பட்டதாரி தகுதியை முழுமையாக நிறைவு செய்துள்ளீர்களா?"
             name="degreeQualification"
             value={alData.degreeQualification}
             options={yesNoOptions}
@@ -398,7 +416,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="ඔබ විසින් උපාධි සුදුසුකමක් සම්පූර්ණ කර ඇත්නම් ලබා ඇති උපාධිය / நீங்கள் பெற்ற பட்டம்"
+            label="If you have completed a degree qualification, please enter the degree obtained / ඔබ විසින් උපාධි සුදුසුකමක් සම්පූර්ණ කර ඇත්නම් ලබා ඇති උපාධිය / நீங்கள் பெற்ற பட்டம்"
             name="degree"
             value={alData.degree}
             onChange={(value) =>
@@ -409,7 +427,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="එම උපාධිය පිරිනමන ලද විශ්වවිද්‍යාලය / ආයතනය / அந்த பட்டம் வழங்கிய பல்கலைக்கழகம் / நிறுவனம்"
+            label="University / Institute / විශ්වවිද්‍යාලය / ආයතනය / பல்கலைக்கழகம் / நிறுவனம்"
             name="university"
             value={alData.university}
             onChange={(value) =>
@@ -420,7 +438,7 @@ export default function EducationQualifications({
           />
 
           <DateField
-            label="උපාධිය වලංගු දිනය / பட்டத்தின் செல்லுபடியாகும் தேதி"
+            label="Degree Validity Date / උපාධිය වලංගු දිනය / பட்டத்தின் செல்லுபடியாகும் தேதி"
             name="degreeDate"
             value={alData.degreeDate}
             onChange={(value) =>
@@ -430,7 +448,7 @@ export default function EducationQualifications({
           />
 
           <TextField
-            label="වෙනත් උසස් අධ්‍යාපන සුදුසුකම් / வேறு உயர்கல்வி தகுதி"
+            label="Other Higher Education Qualifications / වෙනත් උසස් අධ්‍යාපන සුදුසුකම් / வேறு உயர்கல்வி தகுதி"
             name="otherQualification"
             value={alData.otherQualification}
             onChange={(value) =>
