@@ -22,7 +22,7 @@ export default function GeneralDetails({
   return (
     <SectionCard
       number="01"
-      title="General Details / සාමාන්‍ය විස්තර / பொது விவரங்கள்"
+      title="General Information / සාමාන්‍ය තොරතුරු / பொது தகவல்"
       description="Please provide the interview calling number and email address."
     >
       <div className="form-grid">

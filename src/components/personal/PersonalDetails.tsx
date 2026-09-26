@@ -161,7 +161,7 @@ export default function PersonalDetails({
   return (
     <SectionCard
       number="02"
-      title="Personal Details / පෞද්ගලික තොරතුරු / தனிப்பட்ட தகவல்"
+      title="Personal Information / පෞද්ගලික තොරතුරු / தனிப்பட்ட தகவல்"
       description="Please enter your personal and contact information"
     >
       <div className="form-grid">
