@@ -430,7 +430,7 @@ export function validateOLevelDetails(
        */
 
       const subjectResultPattern =
-        /^.+\s*-\s*[ABCSF]$/i;
+        /^.+\s*-\s*[ABCSFW]$/i;
 
 
       if (!subjectResultPattern.test(value)) {
@@ -529,7 +529,7 @@ export function validateOLevelDetails(
        */
 
       const subjectResultPattern =
-        /^.+\s*-\s*[ABCSF]$/i;
+        /^.+\s*-\s*[ABCSFW]$/i;
 
 
       if (!subjectResultPattern.test(value)) {
@@ -638,7 +638,7 @@ alResultFields.forEach(
     ------------------------------------------- */
 
     const subjectResultPattern =
-      /^.+\s*-\s*[ABCSF]$/i;
+      /^.+\s*-\s*[ABCSFW]$/i;
 
 
     if (!subjectResultPattern.test(value)) {
@@ -679,7 +679,8 @@ if (data.generalEnglish === "Yes") {
       "General English grade must be A, B, C, or S.";
 
   } else if (
-    data.geGrade.toUpperCase() === "F"
+    data.geGrade.toUpperCase() === "w" ||
+    data.geGrade.toUpperCase() === "f"
   ) {
 
     errors.geGrade =
